@@ -52,8 +52,32 @@ public class Main {
         };
 
         // Ordenar los alumnos por lastName y firstName e imprimir
+        sort(alumnos, new ComparadorApellidos());
+        System.out.println(" ");
+        System.out.println("alumnos ordenados por apllidos de forma descendente: ");
+        for(Alumno alumno:alumnos) {
+            System.out.println(alumno.getLastName()+alumno.getFirstName());
+        }
 
+        sort(alumnos, new ComparadorNombres());
+        System.out.println(" ");
+        System.out.println("alumnos ordenados por primer nombre de forma descendente: ");
+        for (Alumno alumno:alumnos) {
+            System.out.println(alumno.getFirstName()+alumno.getLastName());
+        }
         // Ordenar por mes de nacimiento y por clave e imprimir
+        sort(alumnos, new Nacimiento());
+        System.out.println(" ");
+        System.out.println("alumnos ordenados por mes de nacimiento de forma descendente: ");
+        for (Alumno alumno:alumnos) {
+            System.out.println(alumno.getFirstName()+ " " +alumno.getBirthday());
+        }
+        sort(alumnos, new Clave());
+        System.out.println(" ");
+        System.out.println("alumnos ordenados por clave de forma descendente: ");
+        for (Alumno alumno:alumnos) {
+            System.out.println(alumno.getFirstName() + " " + alumno.getClave());
+        }
     }
 
     private static void sort(Object[] datos, Comparator comparator) {
